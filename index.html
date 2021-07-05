@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;family=Roboto:wght@300;400;500;600;700&amp;display=swap">
+    <link rel="stylesheet" href="index.css">
+    <script>
+        function getValue(id) {
+            return document.getElementById(id).value.trim();
+        }
+
+        function showError(key, mess) {
+            document.getElementById(key + '_error').innerHTML = mess;
+        }
+
+        function validate() {
+            var flag = true;
+            var phone = getValue('phone');
+            console.log(phone);
+            if (phone == '') {
+                flag = false;
+                showError('phone', 'Please enter Mobile Number');
+            } else {
+                flag = false;
+                showError('phone', '');
+            }
+            var email = getValue('email');
+            var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (email == '') {
+                flag = false;
+                showError('email', 'Please enter Email Address');
+            } else if (!mailformat.test(email)) {
+                flag = false;
+                showError('email', 'Invalid Email Address');
+            } else {
+                flag = false;
+                showError('email', ' ');
+            }
+            return flag;
+        }
+    </script>
+    <title>Bài Tập</title>
+</head>
+
+<body>
+    <div _ngcontent-reu-c78="" class="col-md-12">
+        <h4 _ngcontent-reu-c78="" class="title-page">Forgot Login Email Address</h4>
+        <form _ngcontent-reu-c78="" novalidate="" class="ins-frm ins-frm-create needs-validation ng-pristine ng-invalid ng-touched ">
+            <div _ngcontent-reu-c78=" " class="row mb-3 ">
+                <div _ngcontent-reu-c78=" " class="col-md-6 ">
+                    <div _ngcontent-reu-c78=" " class="row ">
+                        <div _ngcontent-reu-c78=" " class="col-9 "><label _ngcontent-reu-c78=" ">HKID No.</label><input _ngcontent-reu-c78=" " type="text " formcontrolname="HKID " maxlength="8 " class="form-control ng-pristine ng-valid ng-touched ">
+                            <div _ngcontent-reu-c78=" " class="invalid-feedback ">
+                                <!---->
+                                <!---->
+                            </div>
+                        </div>
+                        <div _ngcontent-reu-c78=" " class="col-3 "><label _ngcontent-reu-c78=" ">&nbsp;</label>
+                            <div _ngcontent-reu-c78=" " class="d-flex ai-c "> (&nbsp; <input _ngcontent-reu-c78=" " type="text " formcontrolname="HKID_No " maxlength="1 " class="text-center form-control ng-untouched ng-pristine ng-valid ">&nbsp;) </div>
+                            <div _ngcontent-reu-c78=" " class="invalid-feedback ">
+                                <!---->
+                                <!---->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-reu-c78=" " class="row mb-3 ">
+                <div _ngcontent-reu-c78=" " class="col-md-6 "><label _ngcontent-reu-c78=" ">Passport No.</label><input _ngcontent-reu-c78=" " formcontrolname="PassportNo " type="text " maxlength="9 " class="form-control ng-untouched ng-pristine ng-valid
+            " placeholder=" ">
+                    <div _ngcontent-reu-c78=" " class="invalid-feedback ">
+                        <!---->
+                        <!---->
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-reu-c78=" " class="row mb-3 ">
+                <div _ngcontent-reu-c78=" " class="col-md-6 "><label _ngcontent-reu-c78=" " class="required ">Date of Birth</label>
+                    <div _ngcontent-reu-c78=" " class="input-group "><input _ngcontent-reu-c78=" " placeholder="DD/MM/YYYY " formcontrolname="DateOfBirth " type="date " ngbdatepicker=" " class="form-control ng-untouched ng-pristine ng-valid ">
+                        <!---->
+                        <div _ngcontent-reu-c78=" " class="input-group-append ">
+                            <button _ngcontent-reu-c78=" " type="button " class="btn ">
+                                <i _ngcontent-reu-c78=" " class="far fa-calendar-alt "></i>
+                            </button>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+            </div>
+            <div _ngcontent-reu-c78=" " class="row mb-3 ">
+                <div _ngcontent-reu-c78=" " class="col-md-6 ">
+                    <label _ngcontent-reu-c78=" " class="required ">Mobile Number</label>
+                    <div _ngcontent-reu-c78=" " class="row ">
+                        <div _ngcontent-reu-c78=" " class="col-3 ">
+                            <input _ngcontent-reu-c78=" " type="text " formcontrolname="MobileNumber " class="form-control ng-untouched ng-pristine " disabled=" " value="+852 "></div>
+                        <div _ngcontent-reu-c78=" " class="col-9 ">
+                            <input _ngcontent-reu-c78=" " id="phone" ormcontrolname=" MobileNumberLast " type="text" maxlength="8 " class="form-control ng-untouched ng-pristine ng-invalid ">
+                            <div _ngcontent-rjd-c78=" " class="invalid-feedback ng-star-inserted ">
+                                <div _ngcontent-rjd-c78=" " class="ng-star-inserted "><span id="phone_error"></span></div>
+                            </div>
+                            <!---->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div _ngcontent-reu-c78=" " class="row mb-3 ">
+                <div _ngcontent-reu-c78=" " class="col-md-6 ">
+                    <label _ngcontent-reu-c78=" " class="required ">Other Contact Email Address </label>
+                    <input _ngcontent-reu-c78=" " type="text " id="email" formcontrolname="email" placeholder=" " class="form-control ng-untouched ng-pristine ng-invalid ">
+                    <!---->
+                    <div _ngcontent-rjd-c78=" " class="invalid-feedback ng-star-inserted ">
+                        <div _ngcontent-rjd-c78=" " class="ng-star-inserted "> <span id="email_error"></span></div>
+                        <!---->
+                        <!---->
+                    </div>
+                </div>
+            </div>
+
+            <div _ngcontent-reu-c78=" " class="btns-wrap d-flex justify-content-between ">
+                <button _ngcontent-reu-c78=" " type="button " class="dbtn btn-back ">Back</button>
+                <input _ngcontent-reu-c78=" " type="submit" name="btn" class="dbtn btn-create " onclick="return validate();" id="btn" value="Submit" />
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
